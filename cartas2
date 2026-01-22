@@ -1,0 +1,86 @@
+#include <stdio.h>
+
+int main() {
+    // Carta 1 - São Paulo
+    char estado1[] = "A";
+    char codigo1[] = "A01";
+    char nomeCidade1[] = "São Paulo";
+    int populacao1 = 12325000;
+    float area1 = 1521.11;
+    float pib1 = 699.28;
+    int pontosTuristicos1 = 50;
+    float densidade1 = 8102.47;
+    float pibPerCapita1 = 56724.32;
+    float superPoder1= populacao1 + area1 + pib1 + pontosTuristicos1 + densidade1 + pibPerCapita1;
+
+
+
+    // Carta 2 - Rio de Janeiro
+    char estado2[] = "B";
+    char codigo2[] = "B02";
+    char nomeCidade2[] = "Rio de Janeiro";
+    int populacao2 = 6748000;
+    float area2 = 1200.25;
+    float pib2 = 300.50;
+    int pontosTuristicos2 = 30;
+    float densidade2 = 5622.24;
+    float pibPerCapita2 = 44532.91;
+    float superPoder2 = populacao2 + area2 + pib2 + pontosTuristicos2 + densidade2 + pibPerCapita2;
+
+    int resultado = superPoder1 > superPoder2;
+
+    // Exibição da Carta 1
+    printf("=== CARTA 1 ===\n");
+    printf("Estado: %s\n", estado1);
+    printf("Código: %s\n", codigo1);
+    printf("Cidade: %s\n", nomeCidade1);
+    printf("População: %d\n", populacao1);
+    printf("Área: %.2f km²\n", area1);
+    printf("PIB: %.2f bilhões\n", pib1);
+    printf("Pontos Turísticos: %d\n", pontosTuristicos1);
+    printf("densidade: %.2f hab/km²\n", densidade1);
+    printf("pib per capital: %.2f\n", pibPerCapita1);
+    printf("Super poder: %.2f\n", superPoder1);
+    printf("carta 1 tem super poder maior que carta 2: %d\n", resultado);
+
+    // Exibição da Carta 2
+    printf("\n=== CARTA 2 ===\n");
+    printf("Estado: %s\n", estado2);
+    printf("Código: %s\n", codigo2);
+    printf("Cidade: %s\n", nomeCidade2);
+    printf("População: %d\n", populacao2);
+    printf("Área: %.2f km²\n", area2);
+    printf("PIB: %.2f bilhões\n", pib2);
+    printf("Pontos Turísticos: %d\n", pontosTuristicos2);
+    printf("densidade: %.2f hab/km²\n", densidade2);
+    printf("pib per capital: %.2f\n", pibPerCapita2);
+    printf("Super poder: %.2f\n", superPoder2);
+    
+    //calculos
+     densidade1 = populacao1 / area1;
+     densidade2 = populacao2 / area2;
+     pibPerCapita1 = pib1 / populacao1;
+     pibPerCapita2 = pib2 / populacao2;
+
+    // atributo escolhido para a comparacao 
+    // pode trocar para: area, pib, densidade ou pibPerCapita
+    float valor1 = populacao1;
+    float valor2 = populacao2;
+    char atributo[] = "populacao";
+
+    printf("comparacao de cartas pelo atributo: %s\n", atributo);
+    printf("valor carta1: %.2f\n", valor1);
+    printf("valor carta2: %.2f\n", valor2);
+
+    // determinar o vencedor 
+    if (valor1 > valor2) {
+        printf("carta 1 venceu!\n");
+    } else if (valor2>valor1) {
+        printf("carta 2 venceu!\n");
+   } else {
+        printf("empate!\n");
+   }  
+    
+
+    return 0;
+}
