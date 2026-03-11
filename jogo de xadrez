@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 
 int main() {
@@ -20,7 +21,7 @@ int main() {
     int casasBispo = 5;
     int contadorBispo = 0;
 
-    printf("\nMovimento do Bispo:\n");
+    printf("Movimento do Bispo:\n");
 
     while(contadorBispo < casasBispo) {
         printf("Cima Direita\n");
@@ -34,13 +35,43 @@ int main() {
     int casasRainha = 8;
     int contadorRainha = 0;
 
-    printf("\nMovimento da Rainha:\n");
+    printf("Movimento da Rainha:\n");
 
     do {
         printf("Esquerda\n");
         contadorRainha++;
     } while(contadorRainha < casasRainha);
 
+
+    
+    //(loops aninhados) Movimento do Cavalo
+    // Cavalo move em "L":
+    // duas casas para baixo e uma para a esquerda
+
+    int movimentosVerticais = 2;
+    int movimentosHorizontais = 1;
+
+    printf("Movimento do Cavalo:\n");
+
+    // Loop externo (for) controla o movimento vertical
+    for(int i = 0; i < movimentosVerticais; i++) {
+
+        int contador = 0;
+
+        // Loop interno (while) executa o movimento
+        while(contador < 1) {
+            printf("Baixo\n");
+            contador++;
+        }
+    }
+
+    // Depois do movimento vertical, o cavalo move uma casa para a esquerda
+    int contadorHorizontal = 0;
+
+    while(contadorHorizontal < movimentosHorizontais) {
+        printf("Esquerda\n");
+        contadorHorizontal++;
+    }
 
     return 0;
 }
